@@ -1,11 +1,11 @@
 package Test;
 
 import java.security.MessageDigest;
+import java.util.UUID;
 
 public class SHA256 {
 	
 	
-	String input = "1234";
 	
 	public static String getSHA256(String input) 
 	{
@@ -28,5 +28,27 @@ public class SHA256 {
 		return result.toString();
 	}
 	
+	
+	
+	
+	public static void UUIDuse() {
+		
+		String tempPw = UUID.randomUUID().toString().replace("-", "");
+		tempPw = tempPw.substring(0,10);
+		
+		System.out.println("임시 비밀번호 확인"+tempPw);
+	}
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		System.out.println(SHA256.getSHA256("1234"));
+
+		SHA256.UUIDuse();
+		
+	}
 	
 }
